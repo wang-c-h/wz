@@ -5,21 +5,21 @@
         <el-row class="tittle_text">单股票预测</el-row>
         <el-row :gutter="4" class="select_stock_div">
           <el-col :span="18">
-            <el-input v-model="select_stock_singnl" placeholder="select stock"></el-input>
+            <el-select v-model="select_stock_singnl" placeholder="select stock" style="width:100%"></el-select>
           </el-col>
           <el-col :span="4"><el-button round type="success" class="addButton">Predict</el-button></el-col>
         </el-row>
         <el-row class="tittle_text">多股票预测</el-row>
         <el-row :gutter="4" class="select_stock_div">
           <el-col :span="18">
-            <el-input v-model="select_stock_multi" placeholder="select stock"></el-input>
+            <el-select v-model="select_stock_multi" placeholder="select stock" multiple style="width:100%"></el-select>
           </el-col>
           <el-col :span="4"><el-button round type="success" class="addButton">Predict</el-button></el-col>
         </el-row>
         <el-row class="tittle_text">自选股预测</el-row>
         <el-row :gutter="4" class="select_stock_div">
           <el-col :span="18">
-            <el-input v-model="select_stock_self" placeholder="select stock"></el-input>
+            <el-select v-model="select_stock_self" placeholder="select stock" multiple style="width:100%"></el-select>
           </el-col>
           <el-col :span="4"><el-button round type="success" class="addButton">Predict</el-button></el-col>
         </el-row>
@@ -63,42 +63,42 @@ export default {
   components: { Candlestick },
   data() {
     return {
-      select_stock_singnl: [],
+      select_stock_singnl: [{
+        name: '伊力特',
+        code: '600197.SH'
+      }],
       select_stock_multi: [],
       select_stock_self: [],
       selected_stock: [{
-        name: 'test1',
-        code: '000000'
+        name: '伊力特',
+        code: '600197.SH'
       }, {
-        name: 'test1',
-        code: '000000'
+        name: '水井坊',
+        code: '600779.SH'
       }, {
-        name: 'test1',
-        code: '000000'
+        name: '顺鑫农业',
+        code: '000860.SZ'
       }, {
-        name: 'test1',
-        code: '000000'
+        name: '五粮液',
+        code: '000858.SZ'
       }, {
-        name: 'test1',
-        code: '000000'
+        name: '洋河股份',
+        code: '002304.SZ'
       }, {
-        name: 'test1',
-        code: '000000'
+        name: '贵州茅台',
+        code: '600519.SH'
       }, {
-        name: 'test1',
-        code: '000000'
+        name: '泸州老窖',
+        code: '000568.SZ'
       }, {
-        name: 'test1',
-        code: '000000'
+        name: '古井贡酒',
+        code: '000596.SZ'
       }, {
-        name: 'test1',
-        code: '000000'
+        name: '酒鬼酒',
+        code: '000799.SZ'
       }, {
-        name: 'test1',
-        code: '000000'
-      }, {
-        name: 'test1',
-        code: '000000'
+        name: '山西汾酒',
+        code: '600809.SH'
       }]
     }
   }

@@ -82,8 +82,7 @@ export default {
                     animationDuration
                 }]
             },
-            
-            origin_data: [['2013/1/24', 2320.26, 2320.26, 2287.3, 2362.94],
+            tmp_data: [['2013/1/24', 2320.26, 2320.26, 2287.3, 2362.94],
             ['2013/1/25', 2300, 2291.3, 2288.26, 2308.38],
             ['2013/1/28', 2295.35, 2346.5, 2295.35, 2346.92],
             ['2013/1/29', 2347.22, 2358.98, 2337.35, 2363.8],
@@ -158,19 +157,19 @@ export default {
             ['2013/5/20', 2286.33, 2299.99, 2281.9, 2309.39],
             ['2013/5/21', 2297.11, 2305.11, 2290.12, 2305.3],
             ['2013/5/22', 2303.75, 2302.4, 2292.43, 2314.18],
-            ['2013/5/23', 2293.81, 2275.67, 2274.1, 2304.95],
-            ['2013/5/24', 2281.45, 2288.53, 2270.25, 2292.59],
-            ['2013/5/27', 2286.66, 2293.08, 2283.94, 2301.7],
-            ['2013/5/28', 2293.4, 2321.32, 2281.47, 2322.1],
-            ['2013/5/29', 2323.54, 2324.02, 2321.17, 2334.33],
-            ['2013/5/30', 2316.25, 2317.75, 2310.49, 2325.72],
-            ['2013/5/31', 2320.74, 2300.59, 2299.37, 2325.53],
-            ['2013/6/3', 2300.21, 2299.25, 2294.11, 2313.43],
-            ['2013/6/4', 2297.1, 2272.42, 2264.76, 2297.1],
-            ['2013/6/5', 2270.71, 2270.93, 2260.87, 2276.86],
-            ['2013/6/6', 2264.43, 2242.11, 2240.07, 2266.69],
-            ['2013/6/7', 2242.26, 2210.9, 2205.07, 2250.63],
-            ['2013/6/13', 2190.1, 2148.35, 2126.22,]],
+            ['2013/5/23', 2293.81, 2275.67, 2274.1, 2304.95]],
+            origin_data: [
+            ['2022/12/27', 25.00, 25.05, 24.80, 25.27],
+            ['2022/12/28',24.92, 24.35, 24.27, 24.92],
+            ['2022/12/29', 24.35,24.13,23.75,24.47],
+            ['2022/12/30', 24.41, 24.54, 23.91, 24.60],
+            ['2023/1/3', 24.52, 24.14, 24.00, 25.17],
+            ['2023/1/4', 23.98, 23.80, 23.72, 24.23],
+            ['2023/1/5', 23.86, 24.52, 23.86, 24.67],
+            ['2023/1/6', 24.45, 23.95, 23.85, 24.46],
+            ['2023/1/9', 24.00, 26.35, 23.85, 26.35],
+            ['2023/1/10', 26.39, 25.96, 25.68,26.57],
+            ['2023/1/11', ]],
             data0: {}
         }
     },
@@ -194,7 +193,7 @@ export default {
             this.chart = echarts.init(this.$el, 'macarons')
             var options33 = {
                 title: {
-                    text: '上证指数',
+                    text: '伊力特 600197.SH',
                     left: 0
                 },
                 tooltip: {
@@ -229,14 +228,14 @@ export default {
                 dataZoom: [
                     {
                         type: 'inside',
-                        start: 50,
+                        start: 0,
                         end: 100
                     },
                     {
                         show: true,
                         type: 'slider',
                         top: '90%',
-                        start: 50,
+                        start: 0,
                         end: 100
                     }
                 ],
@@ -275,12 +274,13 @@ export default {
                                     name: 'lowest value',
                                     type: 'min',
                                     valueDim: 'lowest'
-                                },
-                                {
-                                    name: 'average value on close',
-                                    type: 'average',
-                                    valueDim: 'close'
                                 }
+                                // ,
+                                // {
+                                //     name: 'average value on close',
+                                //     type: 'average',
+                                //     valueDim: 'close'
+                                // }
                             ],
                             tooltip: {
                                 formatter: function (param) {
@@ -335,42 +335,43 @@ export default {
                             ]
                         }
                     },
-                    {
-                        name: 'MA5',
-                        type: 'line',
-                        data: this.calculateMA(5),
-                        smooth: true,
-                        lineStyle: {
-                            opacity: 0.5
-                        }
-                    },
-                    {
-                        name: 'MA10',
-                        type: 'line',
-                        data: this.calculateMA(10),
-                        smooth: true,
-                        lineStyle: {
-                            opacity: 0.5
-                        }
-                    },
-                    {
-                        name: 'MA20',
-                        type: 'line',
-                        data: this.calculateMA(20),
-                        smooth: true,
-                        lineStyle: {
-                            opacity: 0.5
-                        }
-                    },
-                    {
-                        name: 'MA30',
-                        type: 'line',
-                        data: this.calculateMA(30),
-                        smooth: true,
-                        lineStyle: {
-                            opacity: 0.5
-                        }
-                    }]
+                    // {
+                    //     name: 'MA5',
+                    //     type: 'line',
+                    //     data: this.calculateMA(5),
+                    //     smooth: true,
+                    //     lineStyle: {
+                    //         opacity: 0.5
+                    //     }
+                    // },
+                    // {
+                    //     name: 'MA10',
+                    //     type: 'line',
+                    //     data: this.calculateMA(10),
+                    //     smooth: true,
+                    //     lineStyle: {
+                    //         opacity: 0.5
+                    //     }
+                    // },
+                    // {
+                    //     name: 'MA20',
+                    //     type: 'line',
+                    //     data: this.calculateMA(20),
+                    //     smooth: true,
+                    //     lineStyle: {
+                    //         opacity: 0.5
+                    //     }
+                    // },
+                    // {
+                    //     name: 'MA30',
+                    //     type: 'line',
+                    //     data: this.calculateMA(30),
+                    //     smooth: true,
+                    //     lineStyle: {
+                    //         opacity: 0.5
+                    //     }
+                    // }
+                ]
             }
             this.chart.setOption(options33)
         },
