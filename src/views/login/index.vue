@@ -40,6 +40,17 @@
           <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
         </span>
       </el-form-item>
+      <el-form-item prop="code" >
+        <el-input
+              v-model.trim="loginForm.code"
+              placeholder="Please enter the verification code"
+              size="small"
+              style="width: 300px "
+            />
+            <span class="login-code" style="position: absolute; top: 8px; right: 12px"  @click="refreshCode">
+              <identify :identifyCode="identifyCode"></identify>
+            </span>
+      </el-form-item>
 
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
 
@@ -55,9 +66,11 @@
 
 <script>
 import { validUsername } from '@/utils/validate'
+import identify from './component/identify'
 
 export default {
   name: 'Login',
+  components: {identify},
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
@@ -76,7 +89,8 @@ export default {
     return {
       loginForm: {
         username: 'admin',
-        password: '111111'
+        password: '111111',
+
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -84,7 +98,10 @@ export default {
       },
       loading: false,
       passwordType: 'password',
-      redirect: undefined
+      redirect: undefined,
+      identifyCodes: "1234567890abcdefjhijklinopqrsduvwxyz",
+      identifyCode: "",
+      code:this.$route.query.code,
     }
   },
   watch: {
@@ -94,6 +111,11 @@ export default {
       },
       immediate: true
     }
+  },
+  mounted() {
+    this.identifyCode = "";
+    this.makeCode(this.identifyCodes, 4);
+    localStorage.setItem("code", this.code);
   },
   methods: {
     showPwd() {
@@ -121,7 +143,25 @@ export default {
           return false
         }
       })
-    }
+    },
+    refreshCode(){
+      this.identifyCode = "";
+      this.makeCode(this.identifyCodes, 4);
+    },
+    //生成验证上的随机数，验证码中的数从identifyCodes中取，
+    makeCode(o, l) {
+      for (let i = 0; i < l; i++) {
+        this.identifyCode += this.identifyCodes[
+          this.randomNum(0, this.identifyCodes.length)
+        ];
+      }
+    },
+    //生成随机数,这里是生成
+    //Math.random()方法返回大于等于0小于1的一个随机数
+    //随机数 = Math.floor(Math.random() * 可能的总数 + 第一个可能的值)
+    randomNum(min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+    },
   }
 }
 </script>
