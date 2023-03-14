@@ -79,27 +79,6 @@
                 v-model="stock_select_data"
                 placeholder="Select Stock"
               ></el-input>
-              <el-form ref="form" :model="stock_form" label-width="80px">
-                <el-form-item label="选择时间" class="el_form_label_div">
-                  <el-col :span="18">
-                    <el-date-picker class="el-date-picker_div"
-                      type="date"
-                      placeholder="开始日期"
-                      v-model="stock_form.date1"
-                      style="width: 100%"
-                    ></el-date-picker>
-                  </el-col>
-                  <el-col class="line" :span="2">--</el-col>
-                  <el-col :span="18">
-                    <el-date-picker class="el-date-picker_div"
-                      type="date"
-                      placeholder="截止日期"
-                      v-model="stock_form.date2"
-                      style="width: 100%"
-                    ></el-date-picker>
-                  </el-col>
-                </el-form-item>
-              </el-form>
               <p style="text-align: center; margin: 10px">股票详情</p>
               <el-table
                 :show-header="false"

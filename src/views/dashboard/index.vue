@@ -24,7 +24,7 @@
           </el-row>
         </el-col>
         <el-col :span="5" class="chart-button">
-          <el-button style="font-size: '30'" class="ele-button">
+          <el-button style="font-size: '30'" class="ele-button" >
             <span class="ele-text">>>Go Analyzing</span>
           </el-button>
         </el-col>
@@ -42,7 +42,7 @@
           </el-row>
         </el-col>
         <el-col :span="5" class="chart-button">
-          <el-button style="font-size: '30'" class="ele-button">
+          <el-button style="font-size: '30'" class="ele-button" >
             <span class="ele-text">>>Go Predict</span>
           </el-button>
         </el-col>
@@ -59,9 +59,9 @@
             <span class="tittle_text2">实时行情更新,直观分析走势</span>
           </el-row>
         </el-col>
-        <el-col :span="5" class="chart-button">
-          <el-button style="font-size: '30'" class="ele-button">
-            <span class="ele-text">>>Go Select</span>
+        <el-col :span="5"  class="chart-button">
+          <el-button style="font-size: '30'"  class="ele-button" >
+            <span class="ele-text" >>>Go Select</span>
           </el-button>
         </el-col>
       </el-row>
@@ -143,6 +143,7 @@ export default {
           margin: 5px;
           padding: 5px;
           background: #47c5db86;
+          border-radius: 25px;
         }
       }
     }
