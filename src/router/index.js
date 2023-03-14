@@ -109,23 +109,23 @@ export const constantRoutes = [
         path: 'index',
         name: 'StockSelection',
         component: () => import('@/views/StockSelection/index'),
-        meta: { title: 'StockSelection', icon: 'form' }
+        meta: { title: 'StockSelection', icon: 'example' }
       }
     ]
   },
   {
     path: '/Forecast',
     component: Layout,
-    redirect: '/Forecast/single',
-    name: 'Forecast',
-    // component: () => import('@/views/Forecast/index'),
-    meta: { title: 'Forecast', icon: 'form' },
+    // redirect: '/Forecast/single',
+    // name: 'Forecast',
+    // // component: () => import('@/views/Forecast/index'),
+    // meta: { title: 'Forecast', icon: 'form' },
     children: [
       {
         path: 'index',
         component: () => import('@/views/Forecast/index'), // Parent router-view
         name: 'Forecast',
-        meta: { title: 'Forecast' },
+        meta: { title: 'Forecast' ,icon: 'table'},
       }
       // {
       //   path: 'single',

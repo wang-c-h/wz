@@ -1,16 +1,17 @@
 <template>
   <div class="main_page">
-    <div class="dashboard-container">
+    <div class="page_title">
       <!-- 页面标题 + 背景-->
       <div
-        class="dashboard-text"
-        style="padding: 16px 16px 0; margin-bottom: 32px"
+        class="dashboard_text"
       >
         {{ names }}
-        <div class="dashboard-text-subtext">
+        <div class="dashboard_text_subtext">
           集股票行情、股票预测、明日选股为一体的可视化平台
         </div>
       </div>
+    </div>
+    <div class="dashboard-container">
       <!-- 行情分析可视化 -->
       <el-row type="flex">
         <el-col :span="3"></el-col>
@@ -87,10 +88,29 @@ export default {
 
 <style lang="scss" scoped>
 .main_page {
+  
+  // opacity: 0.9;
+}
+
+.page_title{
   width: 100%;
   background: url("/img/dashboard_background.jpg") center center repeat;
-  background-size: 100% 100%;
-  opacity: 0.9;
+  background-size: cover;
+  text-align: center;
+  .dashboard_text {
+    font-size: 30px;
+    line-height: 150px;
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 30px;
+    // color: #ffff;
+  }
+    .dashboard_text_subtext {
+      font-size: 20px;
+      line-height: 50px;
+      text-align: center;
+      padding-bottom: 30px;
+    }
 }
 
 .dashboard {
@@ -127,16 +147,11 @@ export default {
       }
     }
   }
-  &-text {
-    font-size: 30px;
-    line-height: 46px;
-    text-align: center;
-    .dashboard-text-subtext {
-      font-size: 20px;
-      line-height: 26px;
-      text-align: center;
-    }
-  }
+
+
+
+
+
 
   // padding: 32px;
   // background-color: rgb(240, 242, 245);

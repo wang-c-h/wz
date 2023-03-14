@@ -69,7 +69,7 @@
                 <div class="image1">
                   <el-image
                     style="width: 1200px; height: 600px"
-                    src="/img/history.png"
+                    src="/img/now.png"
                   />
                 </div>
               </div>
@@ -166,38 +166,38 @@ export default {
       stockinfo_now: [
         {
           name: "开盘价",
-          datass: "test",
+          datass: "24.41",
         },
         {
           name: "收盘价",
-          datass: "test",
+          datass: "24.52",
         },
         {
           name: "最高价",
-          datass: "test",
+          datass: "24.60",
         },
         {
           name: "最低价",
-          datass: "test",
+          datass: "23.91",
         },
         {
           name: "成交量",
-          datass: "test",
+          datass: "65703.53手",
         },
         {
-          name: "成交额",
-          datass: "test",
+          name: "换手率",
+          datass: "1.39%",
         },
         {
-          name: "均价",
-          datass: "test",
+          name: "振幅",
+          datass: "2.86%",
         },
       ],
       stock_form: {
         name: "",
         region: "",
         date1: "2022-5-5",
-        date2: "2022-12-30",
+        date2: "2022-12-25",
         delivery: false,
         type: [],
         resource: "",
